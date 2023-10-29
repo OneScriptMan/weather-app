@@ -17,7 +17,7 @@
   </head>
   <body>
     <div class="desktop">
-      <div class="wearest">Погода</div>
+      <div class="wearest">GoodWeather</div>
       <div class="group">
         <img class="social-icon" alt="" src="./public/733592social@2x.png" />
 
@@ -25,7 +25,14 @@
       </div>
       <div class="rectangle-parent">
         <div class="rectangle"></div>
-        <div class="search-place">search place</div>
+
+        <div class="search-place">
+          <input
+            class="input-search-place"
+            type="text"
+            placeholder="search place"
+          />
+        </div>
         <img
           class="e4ae9cb11b227491c3394-icon"
           alt=""
@@ -33,8 +40,8 @@
         />
       </div>
       <div class="group-parent">
-        <div class="monday-30-feb-2090-parent">
-          <b class="monday-30-feb">MONDAY, 30 FEB 2090</b>
+        <div class="date-parent">
+          <b class="date js-date">MONDAY, 30 FEB 2090</b>
           <div class="seoul-south-korea-wrapper">
             <div class="seoul-south-korea">Seoul, South Korea</div>
           </div>
@@ -44,13 +51,9 @@
           </div>
         </div>
         <div class="line"></div>
-        <div class="winter-parent">
-          <b class="winter">WINTER</b>
-          <img
-            class="snowflake-alt2-512-icon"
-            alt=""
-            src="./public/snowflakealt2512@2x.png"
-          />
+        <div class="season-parent">
+          <b class="season">weather</b>
+          <img class="season-icon" alt="" src="./public/weather/winter.png" />
         </div>
       </div>
       <div class="group-container">
@@ -59,21 +62,17 @@
           <div class="ellipse1"></div>
           <b class="tue">TUE</b>
           <b class="b">2</b>
-          <b class="winter1">WINTER</b>
-          <img
-            class="snowflake-alt2-512-icon1"
-            alt=""
-            src="./public/snowflakealt25121@2x.png"
-          />
+          <b class="season1">season</b>
+          <img class="season-icon1" alt="" src="./public/weather/winter.png" />
         </div>
         <div class="line-group">
           <div class="line1"></div>
           <div class="ellipse1"></div>
           <b class="tue">SUN</b>
           <b class="b1">4</b>
-          <b class="winter1">WINTER</b>
+          <b class="season1">season</b>
           <img
-            class="snowflake-alt2-512-icon1"
+            class="season-icon1"
             alt=""
             src="./public/snowflakealt25121@2x.png"
           />
@@ -83,9 +82,9 @@
           <div class="ellipse1"></div>
           <b class="tue">WED</b>
           <b class="b">4</b>
-          <b class="winter1">WINTER</b>
+          <b class="season1">season</b>
           <img
-            class="snowflake-alt2-512-icon1"
+            class="season-icon1"
             alt=""
             src="./public/snowflakealt25121@2x.png"
           />
@@ -95,9 +94,9 @@
           <div class="ellipse1"></div>
           <b class="tue">THU</b>
           <b class="b1">1</b>
-          <b class="winter1">WINTER</b>
+          <b class="season1">season</b>
           <img
-            class="snowflake-alt2-512-icon1"
+            class="season-icon1"
             alt=""
             src="./public/snowflakealt25121@2x.png"
           />
@@ -107,9 +106,9 @@
           <div class="ellipse1"></div>
           <b class="tue">FRI</b>
           <b class="b1">3</b>
-          <b class="winter1">WINTER</b>
+          <b class="season1">season</b>
           <img
-            class="snowflake-alt2-512-icon1"
+            class="season-icon1"
             alt=""
             src="./public/snowflakealt25121@2x.png"
           />
@@ -119,18 +118,18 @@
           <div class="ellipse1"></div>
           <b class="tue">SAT</b>
           <b class="b1">5</b>
-          <b class="winter1">WINTER</b>
+          <b class="season1">season</b>
           <img
-            class="snowflake-alt2-512-icon1"
+            class="season-icon1"
             alt=""
             src="./public/snowflakealt25121@2x.png"
           />
         </div>
       </div>
       <img
-        class="scenery-illustration-icon"
-        alt=""
-        src="./public/scenery-illustration@2x.png"
+        class="scenery-illustration-icon js-scenery-illustration-icon"
+        id="js-scenery-illustration-icon"
+        src="./public/seasons/season-autumn.png"
       />
     </div>
     <h1>Погода сегодня</h1>
