@@ -3,7 +3,7 @@
 const apiKey = "dc478297180144ec1d96383662ca4abe";
 async function getWeather() {
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=51.50&lon=-0.127&appid=${apiKey}`
+    `https://api.openweathermap.org/data/2.5/weather?lat=55.75&lon=37.61&appid=${apiKey}`
   );
   const data = await response.json();
   return data;
@@ -11,12 +11,15 @@ async function getWeather() {
 
 async function parseData() {
   const data = await getWeather();
+  console.log(data);
   const dataWeather = {
     temp: data.main.temp - 273.15,
     feelsLike: data.main.feels_like,
     humidity: data.main.humidity,
     pressure: data.main.pressure,
-    description: data.weather[0].description
+    description: data.weather[0].description,
+    icon: data.weather[0].icon,
+    name: data.name
   };
   return dataWeather;
 }
@@ -26,15 +29,20 @@ async function renderWeather() {
   const feelsLike = document.querySelector(".js-feels-like");
   const humidity = document.querySelector(".js-humidity");
   const pressure = document.querySelector(".js-pressure");
-  const description = document.querySelector(".js-description");
+  const description = document.querySelector(".js-main-weather-text");
+  const icon = document.getElementById("js-main-weather-icon");
+  const name = document.querySelector(".js-city");
 
   const data = await parseData();
+  console.log(data);
 
-  temp.insertAdjacentHTML("beforeend", ` ${Math.round(data.temp)} °C`);
+  temp.innerHTML = ` ${Math.round(data.temp)}°`;
+  icon.src = `http://openweathermap.org/img/w/${data.icon}.png`;
+  name.innerHTML = data.name;
   // feelsLike.innerHTML = data.feelsLike;
   // humidity.innerHTML = data.humidity;
   // pressure.innerHTML = data.pressure;
-  // description.innerHTML = data.description;
+  description.innerHTML = data.description;
 }
 
 renderWeather();

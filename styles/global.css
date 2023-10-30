@@ -8,7 +8,7 @@ body {
   display: flex-column;
   background: linear-gradient(-79.33deg, #fff, rgba(255, 255, 255, 0)), #ecd7d7;
   width: 100%;
-  height: 700px;
+  height: 1000px;
   overflow: hidden;
   text-align: left;
   font-size: var(--font-size-31xl);
