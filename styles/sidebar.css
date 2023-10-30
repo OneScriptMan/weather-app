@@ -1,0 +1,76 @@
+.sidebar-container {
+  width: 122px;
+  top: 55px;
+  bottom: 0px;
+  left: 0px;
+  margin-left: 40px;
+
+  z-index: 200;
+  padding-top: 5px;
+  font-size: var(--font-size-mini);
+}
+
+.sidebar-element {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 75px;
+  margin-bottom: 10px;
+}
+
+.sidebar-weather-description {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.sidebar-weather-text {
+  font-size: var(--font-size-3xs);
+  width: 30.3px;
+  height: 15px;
+}
+
+.sidebar-right-element {
+  display: flex;
+
+  width: 60%;
+  align-items: center;
+}
+
+.sidebar-day {
+  display: inline-block;
+  width: 9.8px;
+  height: 71px;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+.sidebar-temperature {
+  font-size: var(--font-size-31xl);
+  margin-left: auto;
+  width: 31px;
+  height: 71px;
+}
+
+.sidebar-line {
+  border-right: 3px solid var(--color-black);
+  width: 3px;
+  height: 78px;
+}
+.sidebar-ellipse {
+  border-radius: 50%;
+  background-color: var(--color-gray);
+  border: 2px solid var(--color-black);
+  width: 8.9px;
+  height: 10px;
+  margin-bottom: 5px;
+}

@@ -3,6 +3,19 @@ body {
   line-height: normal;
 }
 
+.desktop {
+  position: relative;
+  display: flex-column;
+  background: linear-gradient(-79.33deg, #fff, rgba(255, 255, 255, 0)), #ecd7d7;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-31xl);
+  color: var(--color-black);
+  font-family: var(--font-pragati-narrow);
+}
+
 :root {
   /* fonts */
   --font-pragati-narrow: "Pragati Narrow";

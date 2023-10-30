@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AJAX</title>
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/app.css" />
+    <link rel="stylesheet" href="./styles/main-info.css" />
+    <link rel="stylesheet" href="./styles/sidebar.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Radley:wght@400&display=swap"
@@ -17,123 +20,162 @@
   </head>
   <body>
     <div class="desktop">
-      <div class="wearest">GoodWeather</div>
-      <div class="group">
-        <img class="social-icon" alt="" src="./public/733592social@2x.png" />
+      <div class="header">
+        <div class="group-social">
+          <img class="social-icon" alt="" src="./public/733592social@2x.png" />
 
-        <img class="social-icon1" alt="" src="./public/733592social1@2x.png" />
-      </div>
-      <div class="rectangle-parent">
-        <div class="rectangle"></div>
+          <img
+            class="social-icon1"
+            alt=""
+            src="./public/733592social1@2x.png"
+          />
+        </div>
+        <div class="wearest">GoodWeather</div>
+        <div class="rectangle-parent">
+          <img
+            class="e4ae9cb11b227491c3394-icon"
+            alt=""
+            src="./public/585e4ae9cb11b227491c3394@2x.png"
+          />
 
-        <div class="search-place">
           <input
             class="input-search-place"
             type="text"
             placeholder="search place"
           />
         </div>
+      </div>
+      <div class="app-body">
+        <div class="sidebar-container">
+          <div class="sidebar-element">
+            <div class="sidebar-weather-description">
+              <img
+                class="sidebar-icon"
+                alt=""
+                src="./public/weather/winter.png"
+              />
+              <b class="sidebar-weather-text">season</b>
+            </div>
+            <div class="sidebar-right-element">
+              <div class="sidebar-line"></div>
+              <b class="sidebar-day">TUE</b>
+              <b class="sidebar-temperature">2</b>
+              <div class="sidebar-ellipse"></div>
+            </div>
+          </div>
+          <div class="sidebar-element">
+            <div class="sidebar-weather-description">
+              <img
+                class="sidebar-icon"
+                alt=""
+                src="./public/weather/winter.png"
+              />
+              <b class="sidebar-weather-text">season</b>
+            </div>
+            <div class="sidebar-right-element">
+              <div class="sidebar-line"></div>
+              <b class="sidebar-day">TUE</b>
+              <b class="sidebar-temperature">2</b>
+              <div class="sidebar-ellipse"></div>
+            </div>
+          </div>
+          <div class="sidebar-element">
+            <div class="sidebar-weather-description">
+              <img
+                class="sidebar-icon"
+                alt=""
+                src="./public/weather/winter.png"
+              />
+              <b class="sidebar-weather-text">season</b>
+            </div>
+            <div class="sidebar-right-element">
+              <div class="sidebar-line"></div>
+              <b class="sidebar-day">TUE</b>
+              <b class="sidebar-temperature">2</b>
+              <div class="sidebar-ellipse"></div>
+            </div>
+          </div>
+          <div class="sidebar-element">
+            <div class="sidebar-weather-description">
+              <img
+                class="sidebar-icon"
+                alt=""
+                src="./public/weather/winter.png"
+              />
+              <b class="sidebar-weather-text">season</b>
+            </div>
+            <div class="sidebar-right-element">
+              <div class="sidebar-line"></div>
+              <b class="sidebar-day">TUE</b>
+              <b class="sidebar-temperature">2</b>
+              <div class="sidebar-ellipse"></div>
+            </div>
+          </div>
+          <div class="sidebar-element">
+            <div class="sidebar-weather-description">
+              <img
+                class="sidebar-icon"
+                alt=""
+                src="./public/weather/winter.png"
+              />
+              <b class="sidebar-weather-text">season</b>
+            </div>
+            <div class="sidebar-right-element">
+              <div class="sidebar-line"></div>
+              <b class="sidebar-day">TUE</b>
+              <b class="sidebar-temperature">2</b>
+              <div class="sidebar-ellipse"></div>
+            </div>
+          </div>
+          <div class="sidebar-element">
+            <div class="sidebar-weather-description">
+              <img
+                class="sidebar-icon"
+                alt=""
+                src="./public/weather/winter.png"
+              />
+              <b class="sidebar-weather-text">season</b>
+            </div>
+            <div class="sidebar-right-element">
+              <div class="sidebar-line"></div>
+              <b class="sidebar-day">TUE</b>
+              <b class="sidebar-temperature">2</b>
+              <div class="sidebar-ellipse"></div>
+            </div>
+          </div>
+        </div>
+        <div class="main-info-cont">
+          <div class="main-info-top">
+            <div class="main-weather-description">
+              <img
+                class="main-weather-icon"
+                alt=""
+                src="./public/weather/winter.png"
+              />
+              <b class="main-weather-text">weather</b>
+            </div>
+            <div class="main-temperature">
+              <div class="line"></div>
+              <div class="main-temperature-number">5</div>
+              <div class="ellipse"></div>
+            </div>
+          </div>
+
+          <div class="date-parent">
+            <b class="date js-date">MONDAY, 30 FEB 2090</b>
+
+            <div class="location">Seoul, South Korea</div>
+          </div>
+        </div>
         <img
-          class="e4ae9cb11b227491c3394-icon"
-          alt=""
-          src="./public/585e4ae9cb11b227491c3394@2x.png"
+          class="scenery-illustration-icon js-scenery-illustration-icon"
+          id="js-scenery-illustration-icon"
+          src="./public/seasons/season-autumn.png"
         />
       </div>
-      <div class="group-parent">
-        <div class="date-parent">
-          <b class="date js-date">MONDAY, 30 FEB 2090</b>
-          <div class="seoul-south-korea-wrapper">
-            <div class="seoul-south-korea">Seoul, South Korea</div>
-          </div>
-          <div class="parent">
-            <div class="div">5</div>
-            <div class="ellipse"></div>
-          </div>
-        </div>
-        <div class="line"></div>
-        <div class="season-parent">
-          <b class="season">weather</b>
-          <img class="season-icon" alt="" src="./public/weather/winter.png" />
-        </div>
-      </div>
-      <div class="group-container">
-        <div class="line-parent">
-          <div class="line1"></div>
-          <div class="ellipse1"></div>
-          <b class="tue">TUE</b>
-          <b class="b">2</b>
-          <b class="season1">season</b>
-          <img class="season-icon1" alt="" src="./public/weather/winter.png" />
-        </div>
-        <div class="line-group">
-          <div class="line1"></div>
-          <div class="ellipse1"></div>
-          <b class="tue">SUN</b>
-          <b class="b1">4</b>
-          <b class="season1">season</b>
-          <img
-            class="season-icon1"
-            alt=""
-            src="./public/snowflakealt25121@2x.png"
-          />
-        </div>
-        <div class="line-container">
-          <div class="line1"></div>
-          <div class="ellipse1"></div>
-          <b class="tue">WED</b>
-          <b class="b">4</b>
-          <b class="season1">season</b>
-          <img
-            class="season-icon1"
-            alt=""
-            src="./public/snowflakealt25121@2x.png"
-          />
-        </div>
-        <div class="group-div">
-          <div class="line1"></div>
-          <div class="ellipse1"></div>
-          <b class="tue">THU</b>
-          <b class="b1">1</b>
-          <b class="season1">season</b>
-          <img
-            class="season-icon1"
-            alt=""
-            src="./public/snowflakealt25121@2x.png"
-          />
-        </div>
-        <div class="line-parent1">
-          <div class="line1"></div>
-          <div class="ellipse1"></div>
-          <b class="tue">FRI</b>
-          <b class="b1">3</b>
-          <b class="season1">season</b>
-          <img
-            class="season-icon1"
-            alt=""
-            src="./public/snowflakealt25121@2x.png"
-          />
-        </div>
-        <div class="line-parent2">
-          <div class="line1"></div>
-          <div class="ellipse1"></div>
-          <b class="tue">SAT</b>
-          <b class="b1">5</b>
-          <b class="season1">season</b>
-          <img
-            class="season-icon1"
-            alt=""
-            src="./public/snowflakealt25121@2x.png"
-          />
-        </div>
-      </div>
-      <img
-        class="scenery-illustration-icon js-scenery-illustration-icon"
-        id="js-scenery-illustration-icon"
-        src="./public/seasons/season-autumn.png"
-      />
     </div>
-    <h1>Погода сегодня</h1>
-    <p class="js-temp">температура:</p>
+    <!-- <h1>Погода сегодня</h1>
+    <p class="js-temp">температура:</p> -->
 
     <script src="script.js"></script>
   </body>
