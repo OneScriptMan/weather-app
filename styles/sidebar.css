@@ -4,8 +4,6 @@
   bottom: 0px;
   left: 0px;
   margin-left: 40px;
-
-  z-index: 200;
   padding-top: 5px;
   font-size: var(--font-size-mini);
 }

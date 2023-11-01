@@ -1,5 +1,5 @@
 .main-info-cont {
-  width: 333px;
+  width: 370px;
   height: 333px;
   font-size: 40px;
 }
@@ -81,6 +81,7 @@
 .date {
   height: 45px;
   display: flex;
+  text-wrap: nowrap;
 }
 .location {
   position: relative;
