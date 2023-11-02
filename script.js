@@ -236,6 +236,29 @@ function renderSeason() {
 }
 renderSeason();
 
+async function findCoordinates(city) {
+  const response = await fetch(
+    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${apiKey}`
+  );
+  const data = await response.json();
+  const loc = {
+    lat: data[0].lat,
+    lon: data[0].lon
+  };
+  console.log(loc);
+  renderWeather(loc);
+  document.querySelector(".js-sidebar").innerHTML = "";
+  renderSidebar(loc);
+}
+
+document.querySelector(".js-input").addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    // inputLocation();
+    const city = document.querySelector(".js-input").value;
+    findCoordinates(city);
+  }
+});
+
 // https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={API key}
 
 // function getweather() {
