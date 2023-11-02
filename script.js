@@ -22,7 +22,7 @@ function getLocation() {
 async function weather() {
   const loc = await getLocation();
   renderWeather(loc);
-  // console.log(getFutureWeather(loc));
+  renderSidebar(loc);
 }
 weather();
 
@@ -51,22 +51,86 @@ async function getWeather(loc) {
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
   );
   const data = await response.json();
-  console.log(data);
   return data;
 }
 
-async function getFutureWeather() {
-  // const lat = loc.lat;
-  // const lon = loc.lon;
+async function getFutureWeather(loc) {
+  const lat = loc.lat;
+  const lon = loc.lon;
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=${apiKey}
+    `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}
 `
   );
   const data = await response.json();
-  console.log(data);
   return data;
 }
-getFutureWeather();
+
+async function parseFutureData(loc) {
+  const data = await getFutureWeather(loc);
+  const dataWeather = [
+    {
+      temp: data.list[1].main.temp - 273.15,
+      description: data.list[1].weather[0].description,
+      icon: data.list[1].weather[0].icon
+    },
+    {
+      temp: data.list[2].main.temp - 273.15,
+      description: data.list[2].weather[0].description,
+      icon: data.list[2].weather[0].icon
+    },
+    {
+      temp: data.list[3].main.temp - 273.15,
+      description: data.list[3].weather[0].description,
+      icon: data.list[3].weather[0].icon
+    },
+    {
+      temp: data.list[4].main.temp - 273.15,
+      description: data.list[4].weather[0].description,
+      icon: data.list[4].weather[0].icon
+    },
+    {
+      temp: data.list[5].main.temp - 273.15,
+      description: data.list[5].weather[0].description,
+      icon: data.list[5].weather[0].icon
+    },
+    {
+      temp: data.list[6].main.temp - 273.15,
+      description: data.list[6].weather[0].description,
+      icon: data.list[6].weather[0].icon
+    }
+  ];
+  return dataWeather;
+}
+
+async function renderSidebarElement(day) {
+  const sidebar = document.querySelector(".js-sidebar");
+  sidebar.insertAdjacentHTML(
+    "beforeend",
+    `<div class="sidebar-element">
+            <div class="sidebar-weather-description">
+              <img
+                class="sidebar-icon"
+                alt=""
+                src="http://openweathermap.org/img/w/${day.icon}.png"
+              />
+              <b class="sidebar-weather-text">${day.description}</b>
+            </div>
+            <div class="sidebar-right-element">
+              <div class="sidebar-line"></div>
+              <b class="sidebar-day">TUE</b>
+              <b class="sidebar-temperature">${Math.round(day.temp)}°</b>
+              
+            </div>
+          </div>`
+  );
+}
+
+async function renderSidebar(loc) {
+  const data = await parseFutureData(loc);
+  data.forEach((day) => {
+    renderSidebarElement(day);
+  });
+}
 
 async function parseData(loc) {
   const data = await getWeather(loc);
