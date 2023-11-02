@@ -67,6 +67,7 @@ async function getFutureWeather(loc) {
 
 async function parseFutureData(loc) {
   const data = await getFutureWeather(loc);
+
   const dataWeather = [
     {
       temp: data.list[1].main.temp - 273.15,
@@ -99,6 +100,30 @@ async function parseFutureData(loc) {
       icon: data.list[6].weather[0].icon
     }
   ];
+
+  for (let i = 0; i < dataWeather.length; i++) {
+    const today = getDate();
+    const weekday = [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
+    ];
+    const nextDay = new Date(today);
+    let newDay = weekday[nextDay.getDay() + i + 1];
+
+    dataWeather[i].day = newDay;
+  }
   return dataWeather;
 }
 
@@ -117,7 +142,7 @@ async function renderSidebarElement(day) {
             </div>
             <div class="sidebar-right-element">
               <div class="sidebar-line"></div>
-              <b class="sidebar-day">TUE</b>
+              <b class="sidebar-day js-sidebar-day">${day.day}</b>
               <b class="sidebar-temperature">${Math.round(day.temp)}°</b>
               
             </div>
@@ -130,6 +155,14 @@ async function renderSidebar(loc) {
   data.forEach((day) => {
     renderSidebarElement(day);
   });
+
+  // const sidebarDay = document.querySelector(".js-sidebar-day");
+  const today = getDate();
+  const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const nextDay = new Date(today);
+  let newDay = weekday[nextDay.getDay() + 2];
+
+  // sidebarDay.innerHTML = newDay;
 }
 
 async function parseData(loc) {
@@ -183,6 +216,8 @@ function renderDate() {
     year: "numeric"
   };
   date.innerHTML = today.toLocaleDateString("en-GB", options);
+  // const nextDay = new Date(today);
+  // nextDay.setDate(today.getDate() + 1);
 }
 renderDate();
 
