@@ -1,0 +1,14 @@
+{
+  "name": "GoodWeather",
+  "version": "1.0.0",
+  "repository": "https://github.com/OneScriptMan/weather-app.git",
+  "author": "OneScriptMan <vladzam79@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.10.2"
+  }
+}

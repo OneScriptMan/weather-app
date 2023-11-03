@@ -225,13 +225,13 @@ function renderSeason() {
   const season = document.getElementById("js-scenery-illustration-icon");
   const today = getDate();
   if (today.getMonth() >= 2 && today.getMonth() <= 4) {
-    season.src = `./public/seasons/season-spring.png`;
+    season.src = require("/public/seasons/season-spring.png");
   } else if (today.getMonth() >= 5 && today.getMonth() <= 7) {
-    season.src = `./public/seasons/season-summer.png`;
+    season.src = require("/public/seasons/season-summer.png");
   } else if (today.getMonth() >= 8 && today.getMonth() <= 10) {
-    season.src = `./public/seasons/season-autumn.png`;
+    season.src = require("/public/seasons/season-autumn.png");
   } else {
-    season.src = `./public/seasons/season-winter.png`;
+    season.src = require("/public/seasons/season-winter.png");
   }
 }
 renderSeason();
